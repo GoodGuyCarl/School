@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:weightSum="1"
+    tools:context=".SecondActivity"
+    android:orientation="vertical">
+    <TextView
+        style="@style/MyHeadlines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:textSize="32sp">
+
+    </TextView>
+    <com.google.android.material.divider.MaterialDivider
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name">
+
+        <LinearLayout
+            android:id="@+id/tasks_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingTop="16dp"
+                android:text="TEST"
+                android:textSize="16sp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins"
+                android:text="TEST"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins"
+                android:padding="8dp"
+                android:text="Tag: Sample tag"
+                android:textColor="@color/headline">
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/dividerrrr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/MyButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="Add Task"
+        android:textSize="12sp"
+        app:icon="@android:drawable/ic_input_add"
+        tools:ignore="HardcodedText">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        style="@style/MyButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="Update Task"
+        android:textSize="12sp"
+        app:icon="@android:drawable/ic_menu_edit"
+        tools:ignore="HardcodedText">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnDelete"
+        style="@style/MyButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="Delete Task"
+        android:textSize="12sp"
+        app:icon="@android:drawable/ic_menu_delete"
+        tools:ignore="HardcodedText">
+
+    </Button>
+
+
+
+</LinearLayout>
