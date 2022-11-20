@@ -45,6 +45,7 @@ public class SecondActivity extends AppCompatActivity {
                 int id = task.id;
                 String title = task.title;
                 String content = task.content;
+                String tag = task.tag;
 
                 TextView tvTaskID = new TextView(context);
                 tvTaskID.setText(String.valueOf(id));
@@ -66,19 +67,30 @@ public class SecondActivity extends AppCompatActivity {
                 tvContent.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
                 tvContent.setGravity(Gravity.CENTER);
 
+                TextView tvTag = new TextView(context);
+                tvTag.setText(tag);
+                tvTag.setTextSize(8);
+                tvTag.setTypeface(getResources().getFont(R.font.poppins));
+                tvTag.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
+                tvTag.setLayoutParams(layout.getLayoutParams());
+
                 if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
                     tvTaskID.setTextColor(this.getResources().getColor(R.color.white));
                     tvTitle.setTextColor(this.getResources().getColor(R.color.headline_night));
                     tvContent.setTextColor(this.getResources().getColor(R.color.white));
+                    tvTag.setTextColor(this.getResources().getColor(R.color.gray_night));
                 } else {
                     tvTaskID.setTextColor(this.getResources().getColor(R.color.black));
                     tvTitle.setTextColor(this.getResources().getColor(R.color.headline));
                     tvContent.setTextColor(this.getResources().getColor(R.color.black));
+                    tvTag.setTextColor(this.getResources().getColor(R.color.gray_day));
 
                 }
+
                 layout.addView(tvTaskID);
                 layout.addView(tvTitle);
                 layout.addView(tvContent);
+                layout.addView(tvTag);
 
             }
         }
@@ -107,6 +119,8 @@ public class SecondActivity extends AppCompatActivity {
                         dialogView.findViewById(R.id.editTextTitle);
                 final TextInputEditText inputContent = (TextInputEditText)
                         dialogView.findViewById(R.id.editTextContent);
+                final TextInputEditText inputTag = (TextInputEditText)
+                        dialogView.findViewById(R.id.editTextTag);
 
                 new MaterialAlertDialogBuilder(context).setView(dialogView)
                         .setTitle("Create Task")
@@ -116,13 +130,16 @@ public class SecondActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String taskTitle = String.valueOf(inputTitle.getText());
                                 String taskContent = String.valueOf(inputContent.getText());
+                                String taskTag = String.valueOf(inputTag.getText());
                                 Tasks taskTable = new Tasks();
                                 taskTable.title = taskTitle;
                                 taskTable.content = taskContent;
+                                taskTable.tag = taskTag;
 
                                 fetchAll();
 
                                 boolean result = new DatabaseHandler(context).insert(taskTable);
+
                                 if (result) {
                                     Toast.makeText(context, "Task created", Toast.LENGTH_LONG).show();
                                     fetchAll();
@@ -149,6 +166,8 @@ public class SecondActivity extends AppCompatActivity {
                         dialogView.findViewById(R.id.editTextTitle);
                 final TextInputEditText inputContent = (TextInputEditText)
                         dialogView.findViewById(R.id.editTextContent);
+                final TextInputEditText inputTag = (TextInputEditText)
+                        dialogView.findViewById(R.id.editTextTag);
 
                 new MaterialAlertDialogBuilder(context).setView(dialogView)
                         .setTitle("Update Task")
@@ -159,10 +178,12 @@ public class SecondActivity extends AppCompatActivity {
                                 int taskID = Integer.parseInt(String.valueOf(inputID.getText()));
                                 String taskTitle = String.valueOf(inputTitle.getText());
                                 String taskContent = String.valueOf(inputContent.getText());
+                                String tagContent = String.valueOf(inputTag.getText());
                                 Tasks taskTable = new Tasks();
                                 taskTable.id = taskID;
                                 taskTable.title = taskTitle;
                                 taskTable.content = taskContent;
+                                taskTable.tag = tagContent;
 
                                 boolean result = new DatabaseHandler(context).update(taskTable);
                                 if (result) {
