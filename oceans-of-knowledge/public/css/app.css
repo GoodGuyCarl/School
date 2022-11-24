@@ -1,0 +1,46 @@
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
+.text-prussian-blue {
+    color: rgba(2, 49, 93, 1)!important;
+}
+.text-congress-blue {
+    color: rgba(0, 69, 126, 1)!important;
+}
+.text-royal-blue {
+    color: rgba(47, 112, 175, 1)!important;
+}
+.text-trendy-pink {
+    color: rgba(128, 100, 145, 1)!important;
+}
+.text-brandy-rose {
+    color: rgba(185, 132, 140, 1)!important;
+}
+.bg-prussian-blue {
+    background-color: rgba(2, 49, 93, 1)!important;
+}
+
+.bg-royal-blue {
+    background-color: rgba(47, 112, 175, 1)!important;
+}
+.bg-congress-blue{
+    background-color: rgba(0, 69, 126, 1)!important;
+}
+.bg-brandy-rose {
+    background-color: rgba(185, 132, 140, 1)!important;
+}
+.bg-trendy-pink {
+    background-color: rgba(128, 100, 145, 1)!important;
+}
+.bg-trendy-pink-outline {
+    border-color: rgba(128, 100, 145, 1)!important;
+    background-color: transparent;
+}
+.bg-trendy-pink-outline:hover{
+    border-color: rgba(128, 100, 145, 1)!important;
+    background-color: rgba(128, 100, 145, 1)!important;
+    color: white !important;
+}
+.gradient {
+    background:linear-gradient(to right, rgba(185, 132, 140, 1), rgba(128, 100, 145, 1), rgba(47, 112, 175, 1), rgba(0, 69, 126, 1), rgba(2, 49, 93, 1))
+}
