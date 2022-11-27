@@ -19,7 +19,6 @@
 .bg-prussian-blue {
     background-color: rgba(2, 49, 93, 1)!important;
 }
-
 .bg-royal-blue {
     background-color: rgba(47, 112, 175, 1)!important;
 }
@@ -32,15 +31,20 @@
 .bg-trendy-pink {
     background-color: rgba(128, 100, 145, 1)!important;
 }
-.bg-trendy-pink-outline {
-    border-color: rgba(128, 100, 145, 1)!important;
-    background-color: transparent;
-}
-.bg-trendy-pink-outline:hover{
-    border-color: rgba(128, 100, 145, 1)!important;
-    background-color: rgba(128, 100, 145, 1)!important;
-    color: white !important;
-}
 .gradient {
     background:linear-gradient(to right, rgba(185, 132, 140, 1), rgba(128, 100, 145, 1), rgba(47, 112, 175, 1), rgba(0, 69, 126, 1), rgba(2, 49, 93, 1))
+}
+.btn-hover {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: rgba(185, 132, 140, 1)!important;
+}
+.btn-hover:hover {
+    color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(185, 132, 140, 0.5)!important;
+}
+.logo-color {
+    filter: invert(37%) sepia(62%) saturate(620%) hue-rotate(168deg) brightness(93%) contrast(87%);
+}
+.link:hover{
+    color: rgba(2, 49, 93, 0.75)!important;;
 }
