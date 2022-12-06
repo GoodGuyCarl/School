@@ -46,5 +46,5 @@
     filter: invert(37%) sepia(62%) saturate(620%) hue-rotate(168deg) brightness(93%) contrast(87%);
 }
 .link:hover{
-    color: rgba(2, 49, 93, 0.75)!important;;
+    color: rgb(185, 132, 140, 1)!important;;
 }

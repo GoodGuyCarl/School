@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('vaccination_card')->nullable();
+            $table->string('year_level')->nullable();
+            $table->string('vaccination_status')->nullable();
+            $table->date('enrollment_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

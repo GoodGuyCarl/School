@@ -12,11 +12,21 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller {
 
     public function home(){
-        return view('welcome');
+        if (Auth::check()){
+            return redirect('/profile');
+        }
+        else {
+            return view('users/welcome');
+        }
     }
 
     public function index(){
-        return view('login');
+        if (Auth::check()){
+            return redirect('/profile');
+        }
+        else {
+            return view('users/login');
+        }
     }
 
     public function login(Request $request){
@@ -33,7 +43,7 @@ class AuthController extends Controller {
     }
 
     public function signup(){
-        return view('register');
+        return view('users/register-user');
     }
 
     public function register(Request $request){
@@ -46,28 +56,27 @@ class AuthController extends Controller {
         $data = $request->all();
         $check = $this->create($data);
 
-        return redirect('login');
+        return redirect('login')->with('register_success', 'Successfully registered!');
     }
 
     public function create(array $data){
         return User::create([
+            'role' => $data['role'],
             'firstname' => $data['firstname'],
             'surname' => $data['surname'],
             'email' => $data['email'],
+            'year_level' => $data['year_level'],
             'password' => Hash::make($data['password'])
         ]);
     }
 
-    public function profile(){
-        if (Auth::check()){
-            return view('profile');
-        }
-        return redirect('/login');
-    }
 
     public function signout(){
         Session::flush();
         Auth::logout();
         return redirect('/login');
+    }
+    public function register_teacher(){
+        return view('users/register-teacher');
     }
 }

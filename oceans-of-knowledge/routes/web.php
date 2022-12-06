@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -16,8 +19,20 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [AuthController::class, 'home']);
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('postlogin', [AuthController::class, 'login'])->name('postlogin');
+Route::post('login', [AuthController::class, 'login'])->name('postlogin');
 Route::get('signup', [AuthController::class, 'signup'])->name('register-user');
-Route::post('postregister', [AuthController::class, 'register'])->name('postregister');
-Route::get('profile', [AuthController::class, 'profile'])->name('profile');
+Route::post('signup', [AuthController::class, 'register'])->name('postregister');
 Route::get('signout', [AuthController::class, 'signout'])->name('signout');
+Route::get('teacher/signup', [AuthController::class, 'register_teacher'])->name('register-teacher');
+
+Route::get('profile', [UserController::class, 'profile'])->name('profile');
+Route::get('profile/edit', [UserController::class, 'edit_profile'])->name('edit_profile');
+Route::post('profile/edit', [UserController::class, 'update'])->name('update');
+
+Route::get('dashboard', [AdminController::class, 'dashboard'])->name('home');
+Route::get('records', [AdminController::class, 'records'])->name('records');
+Route::get('profile/{id}', [AdminController::class, 'edit'])->name('edit');
+Route::post('profile/{id}', [AdminController::class, 'update'])->name('adminupdate');
+Route::get('student/delete/{id}', [AdminController::class, 'delete_student'])->name('delete_student');
+Route::get('staff/delete/{id}', [AdminController::class, 'delete_staff'])->name('delete_staff');
+Route::get('staff', [AdminController::class, 'staff'])->name('staff');
