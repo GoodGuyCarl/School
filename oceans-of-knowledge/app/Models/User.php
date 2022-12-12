@@ -31,6 +31,13 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function upload($request){
+        $image = $request->file('image');
+        $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path() . '/uploads/vaccination_cards', $fileName);
+        $this->vaccination_card = $fileName;
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

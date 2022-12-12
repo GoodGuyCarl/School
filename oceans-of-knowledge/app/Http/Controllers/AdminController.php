@@ -77,4 +77,22 @@ class AdminController extends Controller
             return redirect('/login');
         }
     }
+    public function search(){
+       if(request('keyword') == ''){
+           return redirect('/records')->with('search_message', 'Please enter valid query');
+       }
+
+        else{
+            $keyword = request('keyword');
+            $results = DB::table('users')
+                ->where('firstname', 'like', '%' . $keyword . '%', 'and')
+                ->orWhere('surname', 'like', '%'. $keyword. '%')
+                ->orWhere('year_level', 'like', '%' . $keyword . '%')
+                ->orWhere('vaccination_status', 'like', '%'. $keyword. '%')
+                ->orWhere('enrollment_date', 'like', '%'. $keyword. '%')
+                ->get();
+
+            return view('admin/search', ['results' => $results]);
+        }
+    }
 }

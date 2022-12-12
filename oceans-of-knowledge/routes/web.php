@@ -28,6 +28,8 @@ Route::get('teacher/signup', [AuthController::class, 'register_teacher'])->name(
 Route::get('profile', [UserController::class, 'profile'])->name('profile');
 Route::get('profile/edit', [UserController::class, 'edit_profile'])->name('edit_profile');
 Route::post('profile/edit', [UserController::class, 'update'])->name('update');
+Route::get('upload', [UserController::class, 'upload'])->name('upload');
+Route::post('upload', [UserController::class, 'upload_image'])->name('upload_vax');
 
 Route::get('dashboard', [AdminController::class, 'dashboard'])->name('home');
 Route::get('records', [AdminController::class, 'records'])->name('records');
@@ -36,3 +38,4 @@ Route::post('profile/{id}', [AdminController::class, 'update'])->name('adminupda
 Route::get('student/delete/{id}', [AdminController::class, 'delete_student'])->name('delete_student');
 Route::get('staff/delete/{id}', [AdminController::class, 'delete_staff'])->name('delete_staff');
 Route::get('staff', [AdminController::class, 'staff'])->name('staff');
+Route::get('search', [AdminController::class, 'search'])->name('search');

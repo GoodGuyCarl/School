@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <main class="poppins">
+    <main class="poppins pb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
@@ -9,10 +9,9 @@
                             Announcement
                         </div>
                         <div class="card-body text-center">
-                            Alpha testing of the whole vaccination system is live!<br><br>
-                            Profile page is partially done, both students and faculty can edit their info.<br>
-                            Admin user can now view, update, and delete records of students and staff.<br><br>
-                            The upload of vaccination card will be soon functioning, as well as the verification of emails.
+                            Testing of the whole system is live! Students and staff can now upload their vaccination cards.<br><br>
+                            Profile page is completely done, enrollment date and employment date, only edited by admin.<br>
+                            Admin user can now view, update, and delete records of students and staff.
                         </div>
                     </div>
                 </div>

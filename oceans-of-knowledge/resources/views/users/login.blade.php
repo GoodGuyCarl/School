@@ -1,11 +1,11 @@
 @extends('layouts.main')
 @section('content')
-    <main class="poppins">
+    <main class="poppins pb-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="card shadow-lg">
-                        <h3 class="card-header text-center text-prussian-blue fw-bold p-4">Login</h3>
+                        <h3 class="card-header bg-prussian-blue text-center text-white fw-bold p-4">Login</h3>
                         <div class="card-body">
                             <h3 class="card-title text-center text-prussian-blue fw-bold">Oceans of Knowledge</h3>
                             <p class="text-center fw-lighter text-prussian-blue">A web-based vaccination<br>management system</p>

@@ -1,11 +1,11 @@
 @extends('layouts.main')
 @section('content')
-<main class="poppins">
+<main class="poppins pb-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-prussian-blue fw-bold text-brandy-rose">
                         Your Profile
                     </div>
                     <div class="card-body">

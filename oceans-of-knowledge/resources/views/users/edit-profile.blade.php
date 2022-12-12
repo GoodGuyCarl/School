@@ -1,11 +1,11 @@
 @extends('layouts.main')
 @section('content')
-    <main class="poppins">
+    <main class="poppins pb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header  bg-prussian-blue fw-bold text-brandy-rose">
                             Student Profile
                         </div>
                         <div class="card-body">
@@ -40,9 +40,8 @@
                                         <option value="Vaccinated with 2nd dose and 2 booster shots">Vaccinated with 2nd dose and 2 booster shots</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Upload your proof of vaccination</label>
-                                    <input type="file" id="vaccine_card" class="form-control mb-2"/>
+                                <div class="col-md-12 text-center">
+                                    <a href="{{route('upload')}}" class="link-info">Upload vaccination card here.</a>
                                 </div>
                                 <div class="col-md-10 text-center my-3">
                                     <button type="submit" class="btn btn-hover">Apply changes</button>

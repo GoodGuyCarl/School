@@ -55,4 +55,18 @@ class UserController extends Controller
 
         return redirect('/profile')->with('message', 'Profile successfully updated!');
     }
+    public function upload(){
+        return view('users/upload');
+    }
+    public function upload_image(Request $request){
+        $request->validate([
+            'vaccination_card' => 'required|image|max:1024',
+        ]);
+
+        $path = $request->file('vaccination_card')->store('public/vaccination_cards');
+        $user = Auth::user();
+        $user->vaccination_card = $path;
+        $user->save();
+        return redirect()->back()->with('success', 'Vaccine card uploaded successfully');
+    }
 }
