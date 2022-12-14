@@ -1,25 +1,21 @@
 package com.sanguyo.passwordgenerator;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         generate = (Button) findViewById(R.id.btnGenerate);
         save = (Button) findViewById(R.id.btnSave);
         delete = (Button) findViewById(R.id.btnDelete);
-        RandomPasswordGenerator generator = new RandomPasswordGenerator(this);
         readPasswords();
+        RandomPasswordGenerator generator = new RandomPasswordGenerator(this);
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +53,17 @@ public class MainActivity extends AppCompatActivity {
                 readPasswords();
             }
         });
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    savePassword();
+                    Toast.makeText(MainActivity.this, "Passwords saved to sdcard/Downloads", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();;
+                }
+            }
+        });
     }
     public void readPasswords(){
         layout.removeAllViews();
@@ -71,5 +78,17 @@ public class MainActivity extends AppCompatActivity {
                 layout.addView(passwordView);
             }
         }
+    }
+    public void savePassword() throws IOException {
+        File file = new File("sdcard/Download/", "password.txt");
+        List<Passwords> passwordList = new RandomPasswordGenerator(this).read();
+        FileOutputStream outputStream = new FileOutputStream(file);
+        outputStream.write("Generated Passwords:\n".getBytes());
+        for (Passwords p: passwordList) {
+            String password = p.password;
+            outputStream.write(password.getBytes());
+            outputStream.write("\n".getBytes());
+        }
+        outputStream.close();
     }
 }

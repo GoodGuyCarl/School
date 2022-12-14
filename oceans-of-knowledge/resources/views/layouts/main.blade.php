@@ -13,15 +13,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-<body class="bg-white" style="padding-bottom: 25vh">
+<body class="bg-white" style="padding-bottom: 35vh">
 <header class="container-fluid shadow-lg bg-prussian-blue poppins fw-bold w-auto mb-3">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="/"><img src="{{asset('favicon.ico')}}" class="pe-1" width="48" alt="logo"/>Oceans of Knowledge</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navbar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg>
+                <i class="fa fa-archive"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -110,7 +108,7 @@
 <footer class="d-none d-sm-block fixed-bottom poppins bg-prussian-blue text-white pt-3 pb-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-2 col-md-4 col-lg-4">
+            <div class="col-sm-2 col-md-3 col-lg-4">
                 <h4>About Us</h4>
                 <p>
                     Our team consists of four people.<br>
@@ -120,7 +118,7 @@
                     Steven Billones (the systems analyst)<br>
                 </p>
             </div>
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-3 col-lg-4">
                 <h4>Our socials:</h4>
                 <ul>
                     <li>

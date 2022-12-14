@@ -36,14 +36,22 @@ Enter the number of passwords to generate: ''')
     if number_of_passwords == 'quit':
         break
     else:
-        number_of_passwords = int(number_of_passwords)
+        try:
+            number_of_passwords = int(number_of_passwords)
+        except ValueError:
+            print("Invalid input given!")
+            break
 
     length_of_passwords = input('''
 Enter the length of the passwords you want to generate: ''')
     if length_of_passwords == 'quit':
         break
     else:
-        length_of_passwords = int(length_of_passwords)
+        try:
+            length_of_passwords = int(length_of_passwords)
+        except ValueError:
+            print("Invalid input given!")
+            break
 
     print('''
 Here are your passwords:

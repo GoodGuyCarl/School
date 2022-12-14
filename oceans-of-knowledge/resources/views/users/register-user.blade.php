@@ -126,11 +126,11 @@
                                         {{Session::get('message')}}
                                     </div>
                                 @endif
-                                <div class="form-check text-center mb-2">
+                                <div class="form-check text-center mb-3">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                                     <label class="form-check-label" for="flexCheckChecked">By ticking this box, I hereby agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">privacy and terms</a> of the website.</label>
                                 </div>
-                                <div class="text-center">
+                                <div class="text-center pb-3">
                                     <a href="{{route('register-teacher')}}" class="link-secondary">Not a student? Sign up here.</a>
                                 </div>
 
