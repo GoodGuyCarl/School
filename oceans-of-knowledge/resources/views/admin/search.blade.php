@@ -23,6 +23,7 @@
                             <th scope="col">Vaccination Status</th>
                             <th scope="col">Enrollment Date</th>
                             <th scope="col">Year Level</th>
+                            <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,6 +34,14 @@
                                 <td>{{ $result->vaccination_status }}</td>
                                 <td>{{ $result->enrollment_date }}</td>
                                 <td>{{ $result->year_level }}</td>
+                                <td>
+                                    <a href="{{route('edit', $result->id)}}" class="btn btn-secondary">Edit</a>
+                                    @if($result->role=='0')
+                                        <a href="{{route('delete_student', $result->id)}}" class="btn btn-danger">Delete</a>
+                                    @else
+                                        <a href="{{route('delete_staff', $result->id)}}" class="btn btn-danger">Delete</a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
